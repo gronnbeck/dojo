@@ -1,0 +1,38 @@
+#!/usr/bin/python
+import pickle
+import sys
+import investment
+from history import *
+
+filename = "history.dat"
+
+argv = sys.argv
+if len(argv) < 4:
+	print "Usage: %s team service flag" % argv[0]
+	sys.exit()
+
+team_name = argv[1]
+service	= argv[2]
+flag = argv[3]
+
+history = History()
+history.lock(filename)
+	
+exploit = Exploit(  service = service, 
+				    flag    = flag)
+	
+if history.history.has_key(team_name):
+	team = history.history[team_name]
+	for e in team.exploits:
+		if e == exploit:
+			print "   ERROR: Flag \"%s\" for (%s, %s) already added" % (flag, team_name, service)
+			sys.exit()
+	team.exploits.append(exploit)
+else:
+	team = Team(name 			 = team_name,
+				transfer_history = 0,
+				exploits         = [exploit])
+	history.history[team_name] = team
+
+print "Flag %s added for (%s, %s)"  % (flag, team_name, service)
+history.save_and_unlock(filename)

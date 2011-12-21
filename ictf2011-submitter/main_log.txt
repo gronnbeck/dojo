@@ -1,0 +1,35 @@
+11:25:02 - got new state. tick:91
+11:29:06 - got new state. tick:93
+11:35:13 - got new state. tick:96
+11:37:16 - got new state. tick:97
+11:37:23 - ERROR: Invalid state received (or incomplete?)
+11:39:18 - got new state. tick:98
+11:43:28 - got new state. tick:83
+11:47:22 - got new state. tick:83
+11:48:34 - got new state. tick:83
+11:51:27 - got new state. tick:83
+11:52:12 - got new state. tick:83
+12:43:32 - got new state. tick:83
+12:44:53 - got new state. tick:83
+12:47:58 - got new state. tick:83
+13:04:27 - got new state. tick:83
+13:05:29 - got new state. tick:83
+13:06:05 - got new state. tick:83
+13:06:47 - got new state. tick:83
+13:07:47 - got new state. tick:83
+13:12:23 - got new state. tick:83
+13:19:09 - got new state. tick:83
+13:24:06 - got new state. tick:83
+13:30:04 - got new state. tick:83
+13:33:29 - got new state. tick:84
+13:34:45 - got new state. tick:84
+13:48:34 - got new state. tick:84
+13:50:38 - got new state. tick:84
+13:57:19 - got new state. tick:165
+13:59:21 - got new state. tick:166
+14:01:23 - got new state. tick:167
+14:02:55 - ERROR: Invalid state received (or incomplete?)
+14:03:25 - got new state. tick:168
+14:05:27 - got new state. tick:169
+14:07:29 - got new state. tick:170
+14:09:31 - got new state. tick:171
