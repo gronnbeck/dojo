@@ -32,3 +32,7 @@ The program has a lot of bugs in it, because it's not the final version which we
 ###More about the ICTF at
 * http://www.independent.com/news/2011/dec/07/hackers-battle-global-spoils/
 * http://ictf2011.info/
+
+#Unfinished (maybe work on)
+* parasort (python)
+* pstat

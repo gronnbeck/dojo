@@ -1,0 +1,9 @@
+- Introduction
+A small, and unfinished,  project that I worked on to help me parallelize sorting
+of files on UNIX machines. If I do not update this script it is either because
+I have completely forgot about it, or I have not had time to do it.
+
+
+- version 0.1 alpha
+Is able to parallelize sorting into two cpus if the number of lines in the files
+is even. The program failes if the number of lines are odd.
