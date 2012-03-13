@@ -4,10 +4,13 @@ of files on UNIX machines. If I do not update this script it is either because
 I have completely forgot about it, or I have not had time to do it.
 
 
-- v 0.0.2 alpha
+- 0.0.2-1 alpha
+* realized that I had lock issues. Needed to fix it right away
+
+- 0.0.2 alpha
 * Removes temp files as we go
 * Uses subprocess.call instead of os.popen when calling sort
 
-- v 0.0.1 alpha
+- 0.0.1 alpha
 * Is able to parallelize sorting into two cpus if the number of lines in the files
 is even. The program failes if the number of lines are odd.
