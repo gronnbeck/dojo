@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import threading
+import subprocess
 
 file = sys.argv[1]
 lock = threading.Lock()
@@ -11,6 +12,9 @@ global Files
 Files = []
 global Sorted 
 Sorted= []
+
+def remove(file):
+	subprocess.call(["rm " + file], shell=True)
 
 def linecount(filename):
 	return int(re.search("[0-9]+", os.popen("wc -l " + filename).readline()).group(0))
@@ -27,8 +31,9 @@ def sort():
 	next = next2sort()
 	if not next:
 		return
-	os.popen("sort -f " + next + " > " + next + ".sorted")
+	subprocess.call(["sort -f " + next + " > " + next + ".sorted"], shell=True)
 	lock.acquire()
+	remove(next)
 	Sorted.append(next + ".sorted")
 	lock.release()
 
@@ -44,7 +49,11 @@ def merge():
 	pair = pair2merge()
 	if not pair:
 		return
-	os.popen("sort -fm " + pair[0] + " " + pair[1] + " > done")
+	subprocess.call(["sort -fm " + pair[0] + " " + pair[1] + " > " + file + ".sorted"], shell=True)
+	lock.acquire()
+	remove(pair[0])
+	remove(pair[1])
+	lock.release()
 
 def run():
 	sort()
@@ -73,4 +82,3 @@ for thread in threads:
 	thread.start()
  
 event.wait()
-print "Sorting Done"
