@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import os
 import re
 import sys
@@ -58,8 +60,10 @@ def merge():
 def run():
 	sort()
 	merge()
+	lock.acquire()
 	if len(Sorted) == 0:
 		event.set()
+	lock.release()
 
 os.popen("split -l " + str(linecount(file)/2) + " " + file + " xx")
 Files = []
