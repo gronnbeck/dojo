@@ -8,6 +8,7 @@ UPDATE LOG
 - 14.03.2012
 * Renamed parasort to psort
 * Added random prefix for temp split files
+* Can sort files with odd number of lines. Whoohooo!
 
 - 13.03.2012
 * realized that I had lock issues. Needed to fix it right away
@@ -17,11 +18,11 @@ UPDATE LOG
 
 
 TODO (Prioritized)
-[ ] Make it sort for files with odd number of lines
-[ ] Make threads done sorting pick up new files to short from queue
 [ ] Add a better input interface for the program
 [ ] Split by filesize
 [ ] Split by pivot (number of lines)
+[x] Make it sort for files with odd number of lines
+[x] Make threads done sorting pick up new files to short from queue
 
 
 
