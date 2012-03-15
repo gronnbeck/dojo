@@ -5,8 +5,13 @@ import re
 import sys
 import threading
 import subprocess
+import random
 
 file = sys.argv[1]
+processes = 2
+
+SPLIT_PREFIX = file + str(random.randint(0,2**16))
+
 event = threading.Event()
 
 global Files 
@@ -22,6 +27,10 @@ def remove(file):
 
 def linecount(filename):
 	return int(re.search("[0-9]+", os.popen("wc -l " + filename).readline()).group(0))
+
+def split(filename):
+	subprocess.call(["split -l " + str(linecount(filename)/processes) + " " + filename + " " + SPLIT_PREFIX], shell=True)
+
 
 def next2sort():
 	fileslock.acquire()
@@ -65,21 +74,17 @@ def run():
 		event.set()
 	sortedlock.release()
 
-os.popen("split -l " + str(linecount(file)/2) + " " + file + " xx")
-Files = []
+split(file)
+
 for i in os.popen("ls"):
-	match = re.search("xx[\w]+", i)
+	match = re.search(SPLIT_PREFIX + "[\w]+", i)
 	if not match:
 		continue
 	Files.append(match.group(0))
 
 threads = []
 
-def test():
-	print "test"
-	event.set()
-
-for i in range(2):
+for i in range(processes):
 	threads.append(threading.Thread(target=run))
 
 for thread in threads:
