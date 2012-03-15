@@ -16,7 +16,12 @@ UPDATE LOG
 * Is able to parallelize sorting into two cpus if the number of lines in the files is even. The program failes if the number of lines are odd.
 
 
-TODO
+TODO (Prioritized)
 [ ] Make it sort for files with odd number of lines
 [ ] Make threads done sorting pick up new files to short from queue
+[ ] Add a better input interface for the program
+[ ] Split by filesize
+[ ] Split by pivot (number of lines)
+
+
 
