@@ -1,0 +1,15 @@
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" charset="utf-8">
+	var socket = io.connect('http://localhost');
+	socket.emit('set nick',
+		 { name: prompt("nickname", "default")});
+	socket.on('ready', function(online) {
+		console.log(online);	
+		socket.emit('private msg', {msg: "scret"});
+	});
+</script>
+
+
+
+
+
