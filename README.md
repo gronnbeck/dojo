@@ -14,7 +14,8 @@ The program is in C, and not the first thing I've ever programmed in C. NB! The 
   * libpcap 1.1.1
   
 ###Usage
-reflector --victim-ip VICITM-IP --victim-ethernet VICTIM-ETHERNET-ADDR --relayer-ip RELAYER-IP --relayer-ethernet RELAYER-ETHERNET-ADDR
+
+		reflector --victim-ip VICITM-IP --victim-ethernet VICTIM-ETHERNET-ADDR --relayer-ip RELAYER-IP --relayer-ethernet RELAYER-ETHERNET-ADDR
 
 Good luck!
 
