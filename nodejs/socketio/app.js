@@ -25,6 +25,7 @@ io.sockets.on('connection', function (socket) {
 		}
 		return list;
 	}
+
 	socket.on('set nick', function(nick) {
 		socket.join('online');
 		socket.set('nick', nick, function () {

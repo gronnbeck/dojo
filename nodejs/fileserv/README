@@ -1,0 +1,4 @@
+Just played around with the idea of making a backup tool using node.js.
+I got a better idea, and I'm going to try to use git as a background tool for backing up files instead. Then I hopefully will get the benefit of branching and versioning for free. I just have too learn git a bit more.
+
+My goal is to create a backup system that seamlessly and automatically backups my files. We'll see how it goes. 
