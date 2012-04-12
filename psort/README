@@ -1,8 +1,5 @@
-INTRODUCTION
-A small, and unfinished,  project that I worked on to help me parallelize sorting
-of files on UNIX machines. If I do not update this script it is either because
-I have completely forgot about it, or I have not had time to do it.
-
+DEPRECATED
+This project has been deprecated. I discovered that what parallelization of sort is already implemented in gnu sort. I knew this but I could not find it for macs version of sort. However, it turns out that Os X does also have it. You just have to run "gsort" which is short for gnu sort. 
 
 UPDATE LOG
 - 14.03.2012
